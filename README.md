@@ -1,4 +1,4 @@
 # Ejercicio
 
-Haz una aplicación que calcule el área de un círculo(pi*R2). El radio se pedirá porteclado  (recuerda pasar de String a
-double conDouble.parseDouble). Usa la constante PI y el método pow de Math.
+Lee un número por teclado que pida el precio de un producto  (puede tener decimales) y calcule el precio final con IVA.
+El IVA serauna constante que sera del 21%.

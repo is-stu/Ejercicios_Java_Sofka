@@ -2,20 +2,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Encuentra el area del circulo!");
+        System.out.println("CALCULADORA DE PRECIOS");
         Main main = new Main();
-        double radio = main.readRadio();
-        System.out.println("El area del circulo es: " + main.getArea(radio));
+        double precio = main.readPrecio();
+        System.out.println("El producto con precio " + precio + " le queda con IVA : " + main.getPrecioTotal(precio));
 
     }
 
-    public double readRadio() {
+    public double readPrecio() {
         Scanner scn = new Scanner(System.in);
-        System.out.println("Ingrese el radio del circulo: ");
-        return scn.nextInt();
+        System.out.println("Ingrese el precio del producto");
+        return scn.nextDouble();
     }
 
-    public double getArea(double radio) {
-        return Math.PI * Math.pow(radio, 2);
+    public double getPrecioTotal(double precio) {
+        final double IVA = 0.21;
+        return precio + (precio * IVA);
     }
 }
