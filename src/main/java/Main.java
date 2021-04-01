@@ -2,21 +2,32 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("CALCULADORA DE PRECIOS");
+        System.out.println("NUMEROS PARES E IMPARES DEL 1 AL 100");
         Main main = new Main();
-        double precio = main.readPrecio();
-        System.out.println("El producto con precio " + precio + " le queda con IVA : " + main.getPrecioTotal(precio));
-
+        main.pares();
+        main.impares();
     }
 
-    public double readPrecio() {
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Ingrese el precio del producto");
-        return scn.nextDouble();
+    public boolean isEven(int i) {
+        return i % 2 == 0;
     }
 
-    public double getPrecioTotal(double precio) {
-        final double IVA = 0.21;
-        return precio + (precio * IVA);
+    public void pares() {
+        int i = 1;
+        while (i <= 100) {
+            if (isEven(i))
+                System.out.println(i + " Es par");
+            i++;
+        }
     }
+
+    public void impares() {
+        int i = 1;
+        while (i <= 100) {
+            if (!isEven(i))
+                System.out.println(i + " Es impar");
+            i++;
+        }
+    }
+
 }
