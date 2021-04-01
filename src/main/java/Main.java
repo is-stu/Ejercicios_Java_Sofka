@@ -1,17 +1,21 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int number1 = 1, number2 = 10;
+        System.out.println("Encuentra el area del circulo!");
         Main main = new Main();
-        main.bigger(number1,number2);
+        double radio = main.readRadio();
+        System.out.println("El area del circulo es: " + main.getArea(radio));
+
     }
 
-    public void bigger(int number1, int number2) {
-        if (number1 > number2) {
-            System.out.println("El numero " + number1 + " es mayor que " + number2);
-        } else if (number2 > number1) {
-            System.out.println("El numero " + number2 + " es mayor que " + number1);
-        } else {
-            System.out.println("El numero " + number1 + " es igual que el numero " + number2);
-        }
+    public double readRadio() {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Ingrese el radio del circulo: ");
+        return scn.nextInt();
+    }
+
+    public double getArea(double radio) {
+        return Math.PI * Math.pow(radio, 2);
     }
 }
