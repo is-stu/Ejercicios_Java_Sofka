@@ -13,20 +13,17 @@ public class Main {
     }
 
     public void pares() {
-        int i = 1;
-        while (i <= 100) {
+        for (int i = 1; i <= 100; i++) {
             if (isEven(i))
                 System.out.println(i + " Es par");
-            i++;
         }
+
     }
 
     public void impares() {
-        int i = 1;
-        while (i <= 100) {
+        for (int i = 1; i <= 100; i++) {
             if (!isEven(i))
                 System.out.println(i + " Es impar");
-            i++;
         }
     }
 
