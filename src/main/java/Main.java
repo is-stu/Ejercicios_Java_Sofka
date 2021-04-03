@@ -1,9 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-
-    String text = "La sonrisa sera la mejor arma contra la tristeza";
-
+    
     public static void main(String[] args) {
         Main main = new Main();
         main.clean();
