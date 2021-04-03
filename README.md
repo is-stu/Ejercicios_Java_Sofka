@@ -1,4 +1,3 @@
 # Ejercicio
 
-Del texto, “La sonrisa serala mejor arma contra la tristeza”Reemplaza todas lasadel String anterior por unae,
-adicionalmente concatenar a esta frase una adicional que ustedes quieran incluir por consola y las muestre luego unidas.
+Realizar una aplicación de consola, que al ingresar una frase por teclado elimine los espacios que esta contenga.

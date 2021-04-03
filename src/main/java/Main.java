@@ -6,21 +6,20 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        main.show();
+        main.clean();
     }
 
-    public String readConca(){
+    public String readPhrase(){
         Scanner scn = new Scanner(System.in);
-        System.out.println("Ingrese lo que quiere concatenar a esta frase\n { "+text+" }");
+        System.out.println("Ingrese una frase: ");
         return scn.nextLine();
     }
 
-    public void show(){
-        String textMod = text.replace('a','e');
-        String textModConca = textMod + " " + readConca();
-        System.out.println("Original:\n { "+text+" }");
-        System.out.println("Modificada:\n { "+textMod+" }");
-        System.out.println("Modificada & Concatenada:\n { "+textModConca+" }");
+    public void clean(){
+        String phrase = readPhrase();
+        String phraseMod = phrase.replace(" ","");
+        System.out.println("Original:\n { "+phrase+" }");
+        System.out.println("Sin espacios:\n { "+phraseMod+" }");
     }
 
 }
