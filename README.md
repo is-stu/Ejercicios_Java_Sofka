@@ -1,3 +1,4 @@
 # Ejercicio
 
-Realizar un algoritmo que permita consulta la fecha y hora actual en el formato (AAAA/MM/DD) (HH:MM:SS)
+Crear un programa que pida un numero por teclado y que imprima por pantalla los números desde el numero introducido
+hasta 1000 con saldos de 2 en 2.
