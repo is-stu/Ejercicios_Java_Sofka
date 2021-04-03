@@ -1,3 +1,3 @@
 # Ejercicio
 
-Pedir dos palabras por teclado, indicar si son iguales, sino son iguales mostrar sus diferencias.
+Realizar un algoritmo que permita consulta la fecha y hora actual en el formato (AAAA/MM/DD) (HH:MM:SS)
