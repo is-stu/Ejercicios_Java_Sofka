@@ -4,53 +4,40 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        main.answers();
+        main.compare();
 
     }
 
-    public String read() {
+    public String getWord() {
         Scanner scn = new Scanner(System.in);
-        System.out.println("Ingrese la palabra o frase:");
-        return scn.nextLine();
+        System.out.println("Ingrese una palabra");
+        return scn.next();
     }
 
-    public void answers() {
-        String phrase = read();
-        System.out.println("La longitud de la cadena es de: "+ phrase.length());
-        counterVocals(phrase);
+    public void compare() {
+        String word1 = getWord();
+        String word2 = getWord();
 
+
+        if (word1.equalsIgnoreCase(word2)) {
+            System.out.println("Las palabras " + word1 + " & " + word2 + " son iguales");
+        }else{
+            diff(word1,word2);
+        }
     }
 
-    public void counterVocals(String phrase) {
-        int counterA=0;
-        int counterE=0;
-        int counterI=0;
-        int counterO=0;
-        int counterU=0;
-        for (int i = 0; i < phrase.length(); i++) {
-            switch(phrase.charAt(i)){
-                case 'a':
-                    counterA++;
-                    break;
-                case 'e':
-                    counterE++;
-                    break;
-                case 'i':
-                    counterI++;
-                    break;
-                case 'o':
-                    counterO++;
-                    break;
-                case 'u':
-                    counterU++;
-                    break;
-
+    public void diff(String word1, String word2){
+        if(word1.length()!=word2.length()){
+            System.out.println("Longitud no igual\n");
+            System.out.println(word1+" tiene "+word1.length()+" de longitud");
+            System.out.println(word2+" tiene "+word2.length()+" de longitud");
+        }
+        for (int i =0; i < word1.length(); i++){
+            if(word1.charAt(i)!=word2.charAt(i)){
+                System.out.println("Caracter diferente!");
+                System.out.println("PALABRA1 : "+word1.charAt(i));
+                System.out.println("PALABRA2 : "+word2.charAt(i));
             }
         }
-        System.out.println("Total de A : "+counterA);
-        System.out.println("Total de E : "+counterE);
-        System.out.println("Total de I : "+counterI);
-        System.out.println("Total de O : "+counterO);
-        System.out.println("Total de U : "+counterU);
     }
 }
