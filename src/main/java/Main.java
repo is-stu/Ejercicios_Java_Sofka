@@ -2,39 +2,63 @@
 public class Main {
 
     public static void main(String[] args) {
+    //CREACION DE ARRAYS Y LECTURA DE DATOS --------------------------------------------------------------
+        Serie series[] = new Serie[5];
+        Videojuego videojuegos[] = new Videojuego[5];
 
-        Electrodomestico electrodomestico[] = new Electrodomestico[10];
+        videojuegos[0] = new Videojuego();
+        videojuegos[1] = new Videojuego("Fortnite", 200, "Battle Royal", "Epic Games");
+        videojuegos[2] = new Videojuego("Rainbow Six", 400);
+        videojuegos[3] = new Videojuego("Rocket League", 50, "EveryOne", "Nintendo");
+        videojuegos[4] = new Videojuego("Final fantasy X", 150, "Rol", "Square Enix");
 
-        electrodomestico[0] = new Electrodomestico(200.0, "Verde", 60, 'C');
-        electrodomestico[1] = new Lavadora(150.0, 30);
-        electrodomestico[2] = new Television(500.0, "Negro", 80, 'A', 42, false);
-        electrodomestico[3] = new Electrodomestico();
-        electrodomestico[4] = new Electrodomestico(600.0, "gris", 20, 'B');
-        electrodomestico[5] = new Lavadora(300.0, "blanco", 40, 'z', 40);
-        electrodomestico[6] = new Television(250.0, 70);
-        electrodomestico[7] = new Lavadora(400.0, "Verde", 100, 'A', 15);
-        electrodomestico[8] = new Television(200.0, "naranja", 60, 'C', 30, true);
-        electrodomestico[9] = new Electrodomestico(50.0, 10);
+        series[0] = new Serie();
+        series[1] = new Serie("Juego de tronos", "George R. R. Martin ");
+        series[2] = new Serie("Los Simpsons", 25, "Humor", "Matt Groening");
+        series[3] = new Serie("Black Mirror", 5, "Ciencia Ficcion", "Charlie Brooker");
+        series[4] = new Serie("Breaking Bad", 4, "Thriller", "Vince Gilligan");
+    //Rellenando campos del videojuego 2
+        videojuegos[2].setGenero("Shooter");
+        videojuegos[2].setCompania("Ubisoft");
+    //ENTREGAR Y DEVOLVER VIDEOJUEGOS Y SERIES ------------------------------------------------------------
+        series[2].entregar();
+        series[3].entregar();
+        videojuegos[1].entregar();
+        videojuegos[4].entregar();
 
-        double sumElectro = 0;
-        double sumTV = 0;
-        double sumLavadora = 0;
+        int entregados = 0;
 
-        for (int i = 0; i < electrodomestico.length; i++) {
-            if(electrodomestico[i] instanceof Electrodomestico){
-                sumElectro+=electrodomestico[i].precioFinal();
+        for (int i = 0; i < series.length; i++) {
+            if (series[i].isEntregado()) {
+                entregados += 1;
+                series[i].devolver();
+
             }
-            if(electrodomestico[i] instanceof Lavadora){
-                sumLavadora+=electrodomestico[i].precioFinal();
-            }
-            if(electrodomestico[i] instanceof Television){
-                sumTV+=electrodomestico[i].precioFinal();
+            if (videojuegos[i].isEntregado()) {
+                entregados += 1;
+                videojuegos[i].devolver();
             }
         }
 
-        System.out.println("La suma del precio de los electrodomesticos es de "+sumElectro);
-        System.out.println("La suma del precio de las lavadoras es de "+sumLavadora);
-        System.out.println("La suma del precio de las televisiones es de "+sumTV);
+        System.out.println("Hay " + entregados + " articulos entregados");
+    // SABER CUAL ES EL MAYOR DE CADA UNO -------------------------------------------------------
+        Serie serieMayor = series[0];
+        Videojuego videojuegoMayor = videojuegos[0];
+
+
+        for (int i = 1; i < series.length; i++) {
+            if (series[i].compareTo(serieMayor) == Serie.MAYOR) {
+                serieMayor = series[i];
+            }
+            if (videojuegos[i].compareTo(videojuegoMayor) == Videojuego.MAYOR) {
+                videojuegoMayor = videojuegos[i];
+            }
+
+        }
+        System.out.println(videojuegoMayor);
+        System.out.println(serieMayor);
     }
+
 }
+
 
